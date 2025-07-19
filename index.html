@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VEO 3 - Filipino Affiliate Marketing Video Creator</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: #333;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .header {
+            text-align: center;
+            color: white;
+            margin-bottom: 30px;
+            animation: fadeInDown 1s ease-out;
+        }
+        
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+        
+        .system-card {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            backdrop-filter: blur(10px);
+            animation: fadeInUp 1s ease-out;
+        }
+        
+        .section {
+            margin-bottom: 25px;
+        }
+        
+        .section h2 {
+            color: #5a67d8;
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            border-left: 4px solid #5a67d8;
+            padding-left: 15px;
+        }
+        
+        .section-content {
+            background: #f8f9ff;
+            border-radius: 8px;
+            padding: 15px;
+            border: 1px solid #e2e8f0;
+        }
+        
+        .instructions-list {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .instructions-list li {
+            margin-bottom: 10px;
+            padding: 8px 12px;
+            background: white;
+            border-radius: 6px;
+            border-left: 3px solid #48bb78;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .constraints-list {
+            display: grid;
+            gap: 8px;
+        }
+        
+        .constraint-item {
+            padding: 8px 12px;
+            background: #fff5f5;
+            border-radius: 6px;
+            border-left: 3px solid #f56565;
+            font-size: 0.9rem;
+        }
+        
+        .output-format {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+        }
+        
+        .format-item {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            font-weight: bold;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease;
+        }
+        
+        .format-item:hover {
+            transform: translateY(-2px);
+        }
+        
+        .input-section {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            backdrop-filter: blur(10px);
+            animation: fadeInUp 1.2s ease-out;
+        }
+        
+        .input-section h2 {
+            color: #5a67d8;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .prompt-display {
+            background: #1a202c;
+            color: #e2e8f0;
+            padding: 20px;
+            border-radius: 8px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+            line-height: 1.6;
+            overflow-x: auto;
+            margin-bottom: 20px;
+            border: 2px solid #4a5568;
+        }
+        
+        .user-input {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            font-size: 1rem;
+            resize: vertical;
+            min-height: 120px;
+            font-family: inherit;
+            transition: border-color 0.3s ease;
+        }
+        
+        .user-input:focus {
+            outline: none;
+            border-color: #5a67d8;
+            box-shadow: 0 0 0 3px rgba(90, 103, 216, 0.1);
+        }
+        
+        .submit-btn {
+            background: linear-gradient(135deg, #48bb78, #38a169);
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 15px;
+            width: 100%;
+        }
+        
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 16px rgba(72, 187, 120, 0.3);
+        }
+        
+        .output-area {
+            margin-top: 30px;
+            padding: 20px;
+            background: #f7fafc;
+            border-radius: 8px;
+            border: 2px solid #e2e8f0;
+            min-height: 100px;
+            white-space: pre-wrap;
+            font-family: 'Courier New', monospace;
+            display: none;
+        }
+        
+        .highlight {
+            background: #ffd700;
+            padding: 2px 4px;
+            border-radius: 3px;
+            font-weight: bold;
+        }
+        
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .system-card, .input-section {
+                padding: 20px;
+            }
+            
+            .output-format {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🎬 VEO 3</h1>
+            <p>Intelligent Cinematic Video Creator for Filipino Affiliate Marketing</p>
+        </div>
+        
+        <div class="system-card">
+            <div class="section">
+                <h2>🎯 System Overview</h2>
+                <div class="section-content">
+                    <p>You are <strong>VEO 3</strong> – an intelligent cinematic video creator trained to produce captivating affiliate marketing videos designed to convert viewers into buyers. Your task is to generate a product unboxing or promotion video script and scene flow in a <span class="highlight">Taglish narrative</span>, specifically aimed at a Filipino audience. Your tone should be energetic, warm, and persuasive.</p>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2>📝 Instructions</h2>
+                <div class="section-content">
+                    <ul class="instructions-list">
+                        <li><strong>Visual Hook:</strong> Start with a visual hook in the first 2 seconds (e.g., "Hala! Best deal ever sa Shopee!")</li>
+                        <li><strong>Taglish Dialogue:</strong> Create natural, casual, and friendly Taglish voiceover</li>
+                        <li><strong>Unboxing Process:</strong> Show smooth unboxing with genuine reactions</li>
+                        <li><strong>Key Features:</strong> Highlight top 3 features or benefits</li>
+                        <li><strong>Text Overlays:</strong> Include bold keywords like "Sulit!", "Limited Deal!", "Best Seller!"</li>
+                        <li><strong>Strong CTA:</strong> End with Taglish call-to-action</li>
+                        <li><strong>Music Suggestion:</strong> Recommend upbeat background music</li>
+                        <li><strong>Scene Directions:</strong> Add camera angles and scene directions</li>
+                        <li><strong>Duration:</strong> 30-60 seconds optimized for 9:16 mobile format</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2>⚠️ Constraints</h2>
+                <div class="section-content">
+                    <div class="constraints-list">
+                        <div class="constraint-item">Dialogue must be in casual Taglish by native Filipino speaker</div>
+                        <div class="constraint-item">Avoid scripted or robotic speech - aim for authentic delivery</div>
+                        <div class="constraint-item">No explicit brand names unless specified</div>
+                        <div class="constraint-item">Maximum 60 seconds total duration</div>
+                        <div class="constraint-item">Must use culturally familiar Filipino cues and expressions</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2>📋 Output Format</h2>
+                <div class="section-content">
+                    <div class="output-format">
+                        <div class="format-item">📝 VideoScript</div>
+                        <div class="format-item">🎬 SceneDescription</div>
+                        <div class="format-item">💬 DialogueTaglish</div>
+                        <div class="format-item">📢 CTA</div>
+                        <div class="format-item">🎵 AudioSuggestion</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="input-section">
+            <h2>🚀 Ready to Create Your Video Script?</h2>
+            
+            <div class="prompt-display">
+<strong>SYSTEM PROMPT:</strong>
+Please enter your product unboxing or promotion request and I will start the process.
+
+<strong>AI Response Template:</strong>
+I'll help you create an engaging Filipino affiliate marketing video script! Please provide:
+- Product name/category
+- Key features you want to highlight
+- Target audience specifics
+- Any special offers or deals
+- Preferred video length (30-60 seconds)
+
+Once you share these details, I'll generate your complete video script with Taglish dialogue, scene directions, and conversion-optimized content.
+            </div>
+            
+            <textarea 
+                class="user-input" 
+                id="productInput" 
+                placeholder="Enter your product details here...
+
+Example:
+- Product: Wireless Bluetooth Earbuds
+- Key Features: Noise cancellation, 24-hour battery, waterproof
+- Target: Young professionals, students
+- Special Offer: 50% off limited time
+- Length: 45 seconds"
+            ></textarea>
+            
+            <button class="submit-btn" onclick="generateScript()">🎬 Generate Video Script</button>
+            
+            <div class="output-area" id="outputArea"></div>
+        </div>
+    </div>
+    
+    <script>
+        function generateScript() {
+            const input = document.getElementById('productInput').value;
+            const outputArea = document.getElementById('outputArea');
+            
+            if (!input.trim()) {
+                alert('Please enter your product details first!');
+                return;
+            }
+            
+            // Show loading
+            outputArea.style.display = 'block';
+            outputArea.innerHTML = '🎬 Generating your Filipino affiliate marketing video script...\n\nProcessing your request with VEO 3 AI...';
+            
+            // Simulate AI processing
+            setTimeout(() => {
+                const response = `🎬 VEO 3 AI GENERATED SCRIPT
+=====================================
+
+📝 PRODUCT INPUT RECEIVED:
+${input}
+
+🤖 AI PROCESSING STATUS: ✅ COMPLETE
+
+📋 GENERATED OUTPUT FORMAT:
+1. <VideoScript> - Complete scene-by-scene breakdown
+2. <SceneDescription> - Camera angles and visual directions  
+3. <DialogueTaglish> - Natural Filipino dialogue with timing
+4. <CTA> - Conversion-optimized call-to-action
+5. <AudioSuggestion> - Background music recommendations
+
+🎯 OPTIMIZATION FEATURES:
+✓ Mobile-first 9:16 aspect ratio
+✓ 2-second attention hook
+✓ Cultural Filipino references
+✓ Emotional conversion triggers
+✓ Authentic Taglish delivery
+✓ Strategic text overlays
+
+📱 PLATFORM READY: TikTok, YouTube Shorts, Facebook Reels
+
+🚀 Your script is now ready for production!
+
+Note: This is a demonstration. In actual implementation, your AI would process the input and generate the complete video script following the VEO 3 system instructions.`;
+                
+                outputArea.innerHTML = response;
+            }, 2000);
+        }
+        
+        // Add some interactive elements
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add typing effect to the header
+            const title = document.querySelector('.header h1');
+            const originalText = title.textContent;
+            title.textContent = '';
+            
+            let i = 0;
+            function typeEffect() {
+                if (i < originalText.length) {
+                    title.textContent += originalText.charAt(i);
+                    i++;
+                    setTimeout(typeEffect, 100);
+                }
+            }
+            
+            setTimeout(typeEffect, 500);
+        });
+    </script>
+</body>
+</html>
